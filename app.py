@@ -13,8 +13,8 @@ def welcome():
     return "Welcome All"
 
 @st.cache
-def predict_note_authentication(rooms,department,ward,doctor,staff,id,age,gender,type,severity,conditions,visitors,insurance,deposit):
-    l=[rooms,department,ward,doctor,staff,id,age,gender,type,severity,conditions,visitors,insurance,deposit]
+def predict_note_authentication(rooms,department,ward,doctor,staff,idd,age,gender,typee,severity,conditions,visitors,insurance,deposit):
+    l=[rooms,department,ward,doctor,staff,idd,age,gender,typee,severity,conditions,visitors,insurance,deposit]
     cols=['Available Extra Rooms in Hospital', 'Department', 'Ward_Facility_Code', 'doctor_name', 'staff_available', 'patientid', 'Age', 'gender', 'Type of Admission', 'Severity of Illness', 'health_conditions',
        'Visitors with Patient', 'Insurance', 'Admission_Deposit']
     data2=pd.DataFrame([l], columns=cols)
@@ -39,10 +39,10 @@ def main():
     ward = st.selectbox("Ward Facility Code",("A","B","C","D", "E", "F"))
     doctor = st.selectbox("Doctor Name",("Dr Sarah", "Dr Olivia", "Dr Sophia", "Dr Nathan" ,"Dr Sam", "Dr John", "Dr Mark", "Dr Isaac", "Dr Simon"))
     staff = st.number_input("Staff available")
-    id = st.number_input("Patient ID")
+    idd = st.number_input("Patient ID")
     age = st.selectbox("Age",("0-10","11-20","21-30","31-40","41-50","51-60","61-70", "71-80", "81-90","91-100"))
     gender=st.selectbox("Gender", ("Male","Female", "Other"))
-    type=st.selectbox("Type of admission", ("Trauma", "Emergency", "Urgent"))
+    typee=st.selectbox("Type of admission", ("Trauma", "Emergency", "Urgent"))
     severity=st.selectbox("Severty of illness", ("Minor", "Moderate", "Extreme"))
     conditions=st.selectbox("Previous health conditions", ("High Blood Pressure","Diabetes","Asthama","Heart disease", "None"," Other"))
     visitors=st.number_input("Number of visitors")
@@ -50,7 +50,7 @@ def main():
     deposit=st.number_input("Admission deposit")
     result=""
     if st.button("Predict"):
-        result=predict_note_authentication(rooms,department,ward,doctor,staff,id,age,gender,type,severity,conditions,visitors,insurance,deposit)
+        result=predict_note_authentication(rooms,department,ward,doctor,staff,idd,age,gender,typee,severity,conditions,visitors,insurance,deposit)
     st.success('The output is {}'.format(result)+ " days")
     if st.button("About"):
         st.text("Lets LEarn")
