@@ -42,7 +42,7 @@ def main():
     idd = st.number_input("Patient ID", min_value=30000, max_value=99999)
     age = st.selectbox("Age",("0-10","11-20","21-30","31-40","41-50","51-60","61-70", "71-80", "81-90","91-100"))
     gender=st.selectbox("Gender", ("Male","Female", "Other"))
-    type=st.selectbox("Type of admission", ("Trauma", "Emergency", "Urgent"))
+    typee=st.selectbox("Type of admission", ("Trauma", "Emergency", "Urgent"))
     severity=st.selectbox("Severty of illness", ("Minor", "Moderate", "Extreme"))
     conditions=st.selectbox("Previous health conditions", ("High Blood Pressure","Diabetes","Asthama","Heart disease", "None"," Other"))
     visitors=st.number_input("Number of visitors", min_value=0, max_value=50)
