@@ -39,7 +39,7 @@ def main():
     ward = st.selectbox("Ward Facility Code",("A","B","C","D", "E", "F"))
     doctor = st.selectbox("Doctor Name",("Dr Sarah", "Dr Olivia", "Dr Sophia", "Dr Nathan" ,"Dr Sam", "Dr John", "Dr Mark", "Dr Isaac", "Dr Simon"))
     staff = st.number_input("Staff available", min_value=0, max_value=15)
-    id = st.number_input("Patient ID", min_value=30000, max_value=99999)
+    idd = st.number_input("Patient ID", min_value=30000, max_value=99999)
     age = st.selectbox("Age",("0-10","11-20","21-30","31-40","41-50","51-60","61-70", "71-80", "81-90","91-100"))
     gender=st.selectbox("Gender", ("Male","Female", "Other"))
     type=st.selectbox("Type of admission", ("Trauma", "Emergency", "Urgent"))
